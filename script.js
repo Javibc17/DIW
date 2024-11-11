@@ -13,17 +13,65 @@ const canciones = [
 ]
 
 let SongIndex = 0 
+audio.volume = 0.5
+
 
 function cambiarCancion() {
-    let SongIndex = Math.floor(Math.random() * canciones.length);
+    let SongIndex = Math.floor(Math.random() * canciones.length)
       
-    document.body.style.backgroundImage = `url(${canciones[SongIndex].background})`;
-    console.log(canciones[SongIndex].background);
+    document.body.style.backgroundImage = `url(${canciones[SongIndex].background})`
+    console.log(canciones[SongIndex].background)
     
-    lyricsElement.textContent = canciones[SongIndex].h1;
-    audio.src = canciones[SongIndex].music;
+    lyricsElement.textContent = canciones[SongIndex].h1
+    audio.src = canciones[SongIndex].music
     
-    audio.play();
+    audio.play()
 }
 
+function bajarVolumen() {
+    if (audio.volume > 0) {
+        audio.volume = Math.max(0, audio.volume - 0.1) 
+    }
+}
+
+function subirVolumen() {
+    if (audio.volume < 1) {
+        audio.volume = Math.min(1, audio.volume + 0.1) 
+    }
+}
+
+function mute() {
+    audio.muted = !audio.muted
+    if (audio.muted) {
+        muteBtn.textContent = "Unmute"
+    } else {
+        muteBtn.textContent = "Mute"
+    }
+}
+
+document.addEventListener('keydown', function(event) {
+    switch(event.key) {
+        case 'ArrowUp':
+            subirVolumen()
+            break
+        case 'ArrowDown':
+            bajarVolumen()
+            break
+        case 'ArrowRight':
+            cambiarCancion()
+            break
+        case 'ArrowLeft':
+            cambiarCancion()
+            break
+        case ' ':
+            mute()
+            break
+        default:
+            break
+    }
+})
+
+bajarVolumenBtn.addEventListener('click', bajarVolumen)
+subirVolumenBtn.addEventListener('click', subirVolumen)
+muteBtn.addEventListener('click', mute)
 pasarCancionBtn.addEventListener('click', cambiarCancion)
