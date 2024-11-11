@@ -1,0 +1,91 @@
+body {
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-size: cover;
+    height: 100vh; 
+    margin: 0; 
+}
+
+
+
+.control{
+    width: 350px;
+    height: 200px;
+    padding: 5px;
+    background-color: black;
+
+    border: solid 2px white;
+    border-radius: 5px;
+
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    align-items: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+button {
+    width: 45%; 
+    height: 70px;
+
+    background-color: #444; 
+    color: white;
+    border: solid 2px white; 
+    border-radius: 5px; 
+    font-size: 25px; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(136, 135, 135, 0.3);
+
+}
+
+button:hover {
+    background-color: #666; 
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(136, 135, 135, 0.3); 
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(120%);
+    }
+    100% {
+        transform: translateX(-100%); 
+    }   
+}
+
+
+#lyrics{
+    background-color: black;
+    border: solid 2px white;
+    border-radius: 5px;
+    color: white;
+
+    position: absolute; 
+    width: 220px;
+    height: 50px;
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    
+
+    display: flex;
+    align-items: center;
+    font-size: 15px; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ 
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+h1{
+    display: inline-block; 
+    animation: moveText 7s linear infinite;
+}
