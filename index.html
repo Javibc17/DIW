@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List Interactiva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>To-Do List Interactiva</h1>
+    <div class="seccion">
+      <input type="text" id="inputTarea" placeholder="Añadir nueva tarea...">
+      <button id="btnAgregarTarea">Añadir</button>
+    </div>
+    <hr>
+    <ul id="listaTareas"></ul>
+    <div class="filtrosBtn">
+      <button class="btnFiltro activo" data-filter="all">Todas</button>
+      <button class="btnFiltro" data-filter="completed">Completadas</button>
+      <button class="btnFiltro" data-filter="pending">Pendientes</button>
+    </div>
+  </div>
+  <div id="modal" class="modal">
+    <div class="contenidoModal">
+      <p>¿Estás seguro de que deseas eliminar esta tarea?</p>
+      <div class="accionesModal">
+        <button id="cancelarDel" class="btn">Cancelar</button>
+        <button id="btnDanger" class="btn btnDanger">Eliminar</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
