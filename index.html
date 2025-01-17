@@ -6,40 +6,53 @@
     <title>WGAG</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <h1>Bienvenido, usuario</h1>
+<body class="light">
+    
+    <div class="divBarra light">
+        <div class="barraProgreso" id="barraProgreso"></div>
+    </div>
 
-        <nav>
-            <button id="ir-arriba">Inicio</button>
+    <header id="inicio" class="light">
+        <h1><span id="spanSaludo"></span>, usuario</h1>
+
+        <nav class="light">
+            <div class="navegacion light">
+                <a href="#inicio" class="light">Header</a>
+                <a href="#sectionFondo" class="light">Secciones</a>
+                <a href="#footer" class="light">Footer</a>
+            </div>
+
+            <div>
+                <button id="btnTema" class="light">Cambiar a Tema Oscuro</button>
+                <button id="btnTexto" class="light">Cambiar Texto</button>
+                <button id="btnLeer" class="light">Leer Página</button>
+
+            </div>
+            
         </nav>
     </header>
 
     <main>
-        <div class="contenido">
-            <h2>Cambiar el color de la página</h2>
-
-            <p>Cambiar entre modo claro y modo oscuro</p>
-
-            <button class="acciones">Cambiar Tema</button>
-        </div>
+        <section id="sectionFondo" class="contenido light">
+            <h2>Cambiar el color del fondo</h2>
+            <p>Cambia entre colores aleatorios</p>
+            <button id="btnCol" class="light">Cambiar Color</button>
+        </section>
         
-        <div class="contenido">
+        <section class="contenido light">
             <h2>Contador de Clicks</h2>
-
-            <p>0 Clicks</p>
-            
-            <button class="acciones">Contador</button>
-        </div>
+            <p><span id="spanCont" class="light">0</span> Clicks</p>
+            <button id="btnCont" class="light">Contador</button>
+        </section>
     </main>
 
-    <footer>
+    <a href="#inicio" id="btnSubir" class="light">Inicio</a>
+
+    <footer id="footer" class="light">
         <p>Desarrollado por Javier Becerra Herrador</p>
         <p>&copy; 2025 Javier Becerra Herrador. Todos los derechos reservados.</p>
     </footer>
 
-
     <script src="js/script.js"></script>
- 
 </body>
 </html>
